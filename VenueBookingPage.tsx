@@ -1,4 +1,3 @@
-
 // components/VenueBookingPage.tsx
 // This component will handle searching for venues and booking them.
 import React, { useState } from 'react';
