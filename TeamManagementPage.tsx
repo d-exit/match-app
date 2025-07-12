@@ -1,9 +1,8 @@
-
 // components/TeamManagementPage.tsx
 // This component allows editing the user's primary team profile and viewing past match results.
 import React, { useState, useCallback, useMemo } from 'react';
-import { Team, Member, TeamLevel, PastMatchResult, Match, LeagueMatch, BracketMatch, MatchScoringEvent } from '../types.ts';
-import { deepClone } from '../utils/deepClone.ts';
+import { Team, Member, TeamLevel, PastMatchResult, Match, LeagueMatch, BracketMatch, MatchScoringEvent } from '../types';
+import { deepClone } from '../utils/deepClone';
 
 interface TeamManagementPageProps {
   team: Team; // The team to manage/edit
