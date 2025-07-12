@@ -1,4 +1,3 @@
-
 export enum TeamLevel {
   BEGINNER = "初級",
   INTERMEDIATE = "中級",
