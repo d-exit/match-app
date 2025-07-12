@@ -1,14 +1,12 @@
 // service-worker.js
 
-const CACHE_NAME = 'team-management-pwa-cache-v1';
+const CACHE_NAME = 'team-management-pwa-cache-v2';
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
-  '/manifest.json',
-  '/index.tsx',
-  '/App.tsx',
-  '/types.ts',
-  '/data/mockData.ts'
+  '/manifest.json'
+  // Note: Dynamically generated JS/CSS files will be handled by more advanced service workers.
+  // This basic setup ensures the app shell is cached.
 ];
 
 // Service Workerのインストール処理
