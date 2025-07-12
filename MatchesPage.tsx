@@ -1,4 +1,3 @@
-
 // components/MatchesPage.tsx
 import React, { useState, useCallback, useMemo, useRef } from 'react';
 import { Match, MatchStatus, MatchType, Team, TournamentBracket, LeagueTable, BracketTeam, FollowedTeam, LeagueTeamStats, BracketMatch, LeagueCompetition, LeagueGroup, LeagueMatch, BracketRound, MatchScoringEvent, ChatThread, ChatMessage, ParticipantStatus, TournamentInfoFormData } from '../types';
