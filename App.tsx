@@ -1,19 +1,18 @@
-
 // App.tsx
 import React, { useState, useCallback, useMemo } from 'react';
-import { Team, View, Match, Venue, ScheduleEvent, FollowedTeam, ChatThread, TeamLevel, ChatMessage, MatchType, MatchStatus, TournamentInfoFormData } from './types.ts';
-import { mockTeams, mockMatches, mockVenues, mockScheduleEvents, mockPastMatchResults, mockChatThreads, mockChatMessages } from './data/mockData.ts';
-import TeamProfilePage from './components/TeamProfilePage.tsx';
-import MatchesPage from './components/MatchesPage.tsx';
-import VenueBookingPage from './components/VenueBookingPage.tsx';
-import SchedulePage from './components/SchedulePage.tsx';
-import TeamManagementPage from './components/TeamManagementPage.tsx';
-import FollowedTeamsPage from './components/FollowedTeamsPage.tsx';
-import ChatPage from './components/ChatPage.tsx';
-import ChatScreen from './components/ChatScreen.tsx';
-import MatchmakingPage from './components/MatchmakingPage.tsx';
-import TournamentGuidelinesPage from './components/TournamentGuidelinesPage.tsx';
-import TeamSelectionPage from './components/TeamSelectionPage.tsx'; // Import the new component
+import { Team, View, Match, Venue, ScheduleEvent, FollowedTeam, ChatThread, TeamLevel, ChatMessage, MatchType, MatchStatus, TournamentInfoFormData } from './types';
+import { mockTeams, mockMatches, mockVenues, mockScheduleEvents, mockPastMatchResults, mockChatThreads, mockChatMessages } from './data/mockData';
+import TeamProfilePage from './components/TeamProfilePage';
+import MatchesPage from './components/MatchesPage';
+import VenueBookingPage from './components/VenueBookingPage';
+import SchedulePage from './components/SchedulePage';
+import TeamManagementPage from './components/TeamManagementPage';
+import FollowedTeamsPage from './components/FollowedTeamsPage';
+import ChatPage from './components/ChatPage';
+import ChatScreen from './components/ChatScreen';
+import MatchmakingPage from './components/MatchmakingPage';
+import TournamentGuidelinesPage from './components/TournamentGuidelinesPage';
+import TeamSelectionPage from './components/TeamSelectionPage'; // Import the new component
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>(View.TEAM_MANAGEMENT);
