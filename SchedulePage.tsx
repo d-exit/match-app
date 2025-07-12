@@ -1,4 +1,3 @@
-
 // components/SchedulePage.tsx
 // This component will manage and display team schedules, including a calendar view.
 import React, { useState, useMemo, useCallback } from 'react';
