@@ -61,19 +61,14 @@ const FollowedTeamsPage: React.FC<FollowedTeamsPageProps> = ({
         // Grid with reduced gap for more items
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3"> {/* Reduced gap from gap-4 to gap-3, added sm target */}
           {filteredFollowedTeams.map(team => (
-            // <!-- Each Team Item - Compacted -->
-            // styles.item equivalent: Overall container for a team card.
             <div key={team.id} className={`bg-slate-800 rounded-lg shadow-xl overflow-hidden border ${team.isFavorite ? 'border-yellow-500' : 'border-slate-700'} flex flex-col`}> {/* Reduced rounding, shadow, border adjustments */}
               {/* Team Icon/Logo */}
-              {/* styles.icon equivalent: Container for the team logo. Height reduced significantly. Aim for 32x32px "feel". */}
               <div className="h-20 sm:h-24 w-full overflow-hidden cursor-pointer" onClick={() => onSelectTeam(team)}> {/* Reduced height from h-28 to h-20/h-24 for ~32px icon feel */}
                 <img src={team.logoUrl} alt={`${team.name} ロゴ`} className="w-full h-full object-cover" />
               </div>
               {/* Content Area */}
-              {/* styles.text or general content area: Padding reduced for compactness. */}
               <div className="p-2 sm:p-2.5 flex flex-col flex-grow"> {/* Reduced padding from p-3 to p-2/p-2.5 */}
                 {/* Team Name */}
-                {/* Font size reduced by ~2pt (e.g., text-lg to text-sm or text-base). */}
                 <h3 className="text-sm sm:text-base font-semibold text-sky-400 mb-0.5 truncate cursor-pointer hover:underline" onClick={() => onSelectTeam(team)}>{team.name}</h3> {/* Reduced font size (e.g. from text-lg) & margin */}
                 
                 {/* Location */}
