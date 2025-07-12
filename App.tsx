@@ -243,7 +243,7 @@ const App: React.FC = () => {
         <NavButton view={View.TEAM_MANAGEMENT} label="チーム管理" current={currentView} onClick={navigateTo} />
         <NavButton view={View.FOLLOWED_TEAMS} label="フォロー中" current={currentView} onClick={navigateTo} />
         <NavButton view={View.MATCHES} label="試合管理" current={currentView} onClick={navigateTo} />
-        <NavButton view={View.TOURNAMENT_GUIDELINES} label="大会要項" current={currentView} onClick={navigateTo} />
+        <NavButton view={View.TOURNAMENT_GUIDELINES} label="大会要項作成" current={currentView} onClick={navigateTo} />
         <NavButton view={View.SCHEDULE} label="スケジュール" current={currentView} onClick={navigateTo} />
         <NavButton view={View.MATCHMAKING} label="マッチング" current={currentView} onClick={navigateTo} />
         <NavButton view={View.VENUE_BOOKING} label="会場予約" current={currentView} onClick={navigateTo} />
