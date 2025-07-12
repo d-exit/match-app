@@ -65,27 +65,24 @@ const MatchmakingPage: React.FC<MatchmakingPageProps> = ({ allTeams, onFollowTea
 
 
   return (
-    <div className="space-y-6"> {/* Reduced main spacing */}
-      <h2 className="text-2xl sm:text-3xl font-semibold text-sky-300">マッチング検索</h2> {/* Slightly smaller header */}
+    <div className="space-y-6">
+      <h2 className="text-2xl sm:text-3xl font-semibold text-sky-300">マッチング検索</h2>
 
-      {/* Filters Section */}
-      <div className="bg-slate-800 p-4 sm:p-6 rounded-xl shadow-xl space-y-4"> {/* Reduced padding, space-y */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"> {/* Reduced gap */}
-          {/* Prefecture Filter */}
+      <div className="bg-slate-800 p-4 sm:p-6 rounded-xl shadow-xl space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
-            <h4 className="text-sm sm:text-base font-semibold text-slate-300 mb-1.5">都道府県</h4> {/* Reduced font size and margin */}
-            <div className="space-y-0.5 max-h-28 sm:max-h-32 overflow-y-auto pr-1"> {/* Reduced max-h, space-y */}
+            <h4 className="text-sm sm:text-base font-semibold text-slate-300 mb-1.5">都道府県</h4>
+            <div className="space-y-0.5 max-h-28 sm:max-h-32 overflow-y-auto pr-1">
               {prefectures.map(pref => (
-                <label key={pref} className="flex items-center space-x-1.5 cursor-pointer text-xs sm:text-sm hover:bg-slate-700 p-0.5 sm:p-1 rounded"> {/* Reduced space, padding, font */}
+                <label key={pref} className="flex items-center space-x-1.5 cursor-pointer text-xs sm:text-sm hover:bg-slate-700 p-0.5 sm:p-1 rounded">
                   <input type="checkbox" checked={(filters.prefecture || []).includes(pref)} onChange={() => handleMultiSelectChange('prefecture', pref)}
-                    className="form-checkbox h-3.5 w-3.5 sm:h-4 sm:w-4 bg-slate-600 border-slate-500 text-sky-500 focus:ring-sky-500" /> {/* Smaller checkbox */}
+                    className="form-checkbox h-3.5 w-3.5 sm:h-4 sm:w-4 bg-slate-600 border-slate-500 text-sky-500 focus:ring-sky-500" />
                   <span>{pref}</span>
                 </label>
               ))}
             </div>
           </div>
 
-          {/* Level Filter */}
           <div>
             <h4 className="text-sm sm:text-base font-semibold text-slate-300 mb-1.5">レベル</h4>
              <div className="space-y-0.5 max-h-28 sm:max-h-32 overflow-y-auto pr-1">
@@ -99,7 +96,6 @@ const MatchmakingPage: React.FC<MatchmakingPageProps> = ({ allTeams, onFollowTea
             </div>
           </div>
           
-          {/* Age Category Filter */}
           <div>
             <h4 className="text-sm sm:text-base font-semibold text-slate-300 mb-1.5">年齢カテゴリ</h4>
              <div className="space-y-0.5 max-h-28 sm:max-h-32 overflow-y-auto pr-1">
@@ -113,28 +109,25 @@ const MatchmakingPage: React.FC<MatchmakingPageProps> = ({ allTeams, onFollowTea
             </div>
           </div>
 
-          {/* Rating Filter */}
           <div className="sm:col-span-2 md:col-span-1">
             <h4 className="text-sm sm:text-base font-semibold text-slate-300 mb-1.5">レーティング</h4>
-            <div className="flex gap-1.5 items-center"> {/* Reduced gap */}
-              <input type="number" name="ratingMin" placeholder="最小" value={filters.ratingMin || ''} onChange={handleRatingChange} className="w-1/2 bg-slate-700 p-1.5 rounded-md border border-slate-600 text-xs sm:text-sm" /> {/* Reduced padding, font */}
+            <div className="flex gap-1.5 items-center">
+              <input type="number" name="ratingMin" placeholder="最小" value={filters.ratingMin || ''} onChange={handleRatingChange} className="w-1/2 bg-slate-700 p-1.5 rounded-md border border-slate-600 text-xs sm:text-sm" />
               <span className="text-xs sm:text-sm">～</span>
-              <input type="number" name="ratingMax" placeholder="最大" value={filters.ratingMax || ''} onChange={handleRatingChange} className="w-1/2 bg-slate-700 p-1.5 rounded-md border border-slate-600 text-xs sm:text-sm" /> {/* Reduced padding, font */}
+              <input type="number" name="ratingMax" placeholder="最大" value={filters.ratingMax || ''} onChange={handleRatingChange} className="w-1/2 bg-slate-700 p-1.5 rounded-md border border-slate-600 text-xs sm:text-sm" />
             </div>
           </div>
           
-          {/* Available Date Filter */}
            <div>
             <h4 className="text-sm sm:text-base font-semibold text-slate-300 mb-1.5">空き日程</h4>
             <input type="date" value={availableDateFilter} onChange={(e) => setAvailableDateFilter(e.target.value)}
-                className="w-full bg-slate-700 p-1.5 rounded-md border border-slate-600 text-slate-400 text-xs sm:text-sm" /> {/* Reduced padding, font */}
-            <p className="text-xs text-slate-500 mt-0.5">チームの「空き」状況で簡易検索</p> {/* Reduced margin */}
+                className="w-full bg-slate-700 p-1.5 rounded-md border border-slate-600 text-slate-400 text-xs sm:text-sm" />
+            <p className="text-xs text-slate-500 mt-0.5">チームの「空き」状況で簡易検索</p>
           </div>
         </div>
       </div>
       
-      {/* Active Filters Display */}
-        <div className="my-3 space-x-1.5 space-y-1.5"> {/* Reduced margin, space */}
+        <div className="my-3 space-x-1.5 space-y-1.5">
             {(filters.prefecture || []).map(p => <FilterTag key={p} label="県" value={p} onRemove={() => handleMultiSelectChange('prefecture', p)} compact />)}
             {(filters.level || []).map(l => <FilterTag key={l} label="Lv" value={l.substring(0,2)} onRemove={() => handleMultiSelectChange('level', l)} compact />)}
             {(filters.ageCategory || []).map(a => <FilterTag key={a} label="年" value={a} onRemove={() => handleMultiSelectChange('ageCategory', a)} compact />)}
@@ -144,24 +137,18 @@ const MatchmakingPage: React.FC<MatchmakingPageProps> = ({ allTeams, onFollowTea
         </div>
 
 
-      {/* Recommended Teams List */}
-      <h3 className="text-xl sm:text-2xl font-semibold text-sky-300 mt-6">おすすめチーム ({recommendedTeams.length}件)</h3> {/* Reduced margin */}
+      <h3 className="text-xl sm:text-2xl font-semibold text-sky-300 mt-6">おすすめチーム ({recommendedTeams.length}件)</h3>
       {recommendedTeams.length > 0 ? (
-        // Grid with reduced gap for more items
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3"> {/* Reduced gap from gap-6 to gap-3, added sm target */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
           {recommendedTeams.map(team => (
-            <div key={team.id} className="bg-slate-800 rounded-lg shadow-xl overflow-hidden flex flex-col"> {/* Reduced rounding, shadow */}
-              {/* Team Icon/Logo */}
-              <div className="h-20 sm:h-24 w-full overflow-hidden cursor-pointer" onClick={() => onSelectTeam(team)}> {/* Reduced height from h-40 for ~32px icon feel */}
+            <div key={team.id} className="bg-slate-800 rounded-lg shadow-xl overflow-hidden flex flex-col">
+              <div className="h-20 sm:h-24 w-full overflow-hidden cursor-pointer" onClick={() => onSelectTeam(team)}>
                 <img src={team.logoUrl} alt={`${team.name} ロゴ`} className="w-full h-full object-cover" />
               </div>
-              {/* Content Area */}
-              <div className="p-2 sm:p-2.5 flex flex-col flex-grow"> {/* Reduced padding from p-5 */}
-                {/* Team Name */}
-                <h4 className="text-sm sm:text-base font-semibold text-sky-400 mb-1 truncate cursor-pointer hover:underline" onClick={() => onSelectTeam(team)}>{team.name}</h4> {/* Reduced font size and margin */}
+              <div className="p-2 sm:p-2.5 flex flex-col flex-grow">
+                <h4 className="text-sm sm:text-base font-semibold text-sky-400 mb-1 truncate cursor-pointer hover:underline" onClick={() => onSelectTeam(team)}>{team.name}</h4>
                 
-                {/* Filter Tags for team info - made compact */}
-                <div className="mb-1.5 sm:mb-2 space-x-1 space-y-1 flex flex-wrap"> {/* Reduced margin, allow wrap */}
+                <div className="mb-1.5 sm:mb-2 space-x-1 space-y-1 flex flex-wrap">
                     <FilterTag label="県" value={team.prefecture?.substring(0,2)} compact />
                     <FilterTag label="Lv" value={team.level.substring(0,2)} compact />
                     <FilterTag label="年" value={team.ageCategory} compact />
@@ -169,7 +156,6 @@ const MatchmakingPage: React.FC<MatchmakingPageProps> = ({ allTeams, onFollowTea
                     <FilterTag label="空" value={team.availableSlotsText} compact />
                 </div>
                 
-                {/* Follow Button: Ensure touch target is at least 44x44dp. Padding and font size adjusted. */}
                 <button 
                   onClick={() => onFollowTeam(team)}
                   disabled={followedTeamIds.includes(team.id)}
@@ -177,7 +163,7 @@ const MatchmakingPage: React.FC<MatchmakingPageProps> = ({ allTeams, onFollowTea
                               ${followedTeamIds.includes(team.id) 
                                 ? 'bg-slate-600 text-slate-400 cursor-not-allowed' 
                                 : 'bg-green-600 hover:bg-green-700 text-white'}`}
-                > {/* Reduced font size, py-2 px-2.5 for touch target, mt-auto */}
+                >
                   {followedTeamIds.includes(team.id) ? 'フォロー済み' : 'フォローする'}
                 </button>
               </div>
@@ -185,7 +171,7 @@ const MatchmakingPage: React.FC<MatchmakingPageProps> = ({ allTeams, onFollowTea
           ))}
         </div>
       ) : (
-        <p className="text-center text-slate-400 text-lg sm:text-xl py-8 sm:py-10">条件に合うチームが見つかりませんでした。</p> {/* Adjusted padding */}
+        <p className="text-center text-slate-400 text-lg sm:text-xl py-8 sm:py-10">条件に合うチームが見つかりませんでした。</p>
       )}
     </div>
   );
