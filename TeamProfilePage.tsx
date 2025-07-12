@@ -1,4 +1,3 @@
-
 // components/TeamProfilePage.tsx
 // This component displays the detailed profile of a selected team.
 import React, { useMemo } from 'react';
